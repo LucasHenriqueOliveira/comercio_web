@@ -1,15 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+    model: any = {};
+    loading = false;
+    returnUrl: string;
 
-  ngOnInit() {
-  }
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router) { }
+
+    ngOnInit() {
+
+    }
+
+    login() {
+        this.loading = true;
+    }
 
 }
