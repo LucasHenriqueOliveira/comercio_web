@@ -1,6 +1,15 @@
 <div class="image-top">
 	<img src="assets/images/top.jpeg" width="100%" />
 </div>
+<div class="loading" *ngIf="loading">
+	<div class="info-box">
+		<div class="spinner" *ngIf="spinner">
+			<div class="double-bounce1"></div>
+			<div class="double-bounce2"></div>
+		</div>
+		<span [innerHTML]="message"></span>
+	</div>
+</div>
 <div class="home">
 	<h1>Bem vindo a Koffiehuis!</h1>
 
@@ -12,7 +21,7 @@
 			</button>
 		</div>
 		<div class="col-4">
-			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+			<button class="btn btn-secondary btn-lg btn-block" (click)="callWaiter()">
 				<i class="fa fa-bullhorn"></i>
 				<span>Chamar o garçom</span>
 			</button>
@@ -27,7 +36,7 @@
 			</button>
 		</div>
 		<div class="col-4">
-			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/history']">
 				<i class="fa fa-coffee"></i>
 				<span>Conheça a história</span>
 			</button>
@@ -36,7 +45,7 @@
 
 	<div class="row options">
 		<div class="col-8 offset-md-2">
-			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+			<button class="btn btn-secondary btn-lg btn-block" (click)="closeOrder()">
 				<i class="fa fa-credit-card"></i>
 				<span>Fechar a conta</span>
 			</button>

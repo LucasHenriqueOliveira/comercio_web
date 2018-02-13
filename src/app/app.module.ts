@@ -9,13 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { AuthGuard } from './services/auth-guard.service';
 import { MenuComponent } from './menu/menu.component';
 import { ShoppingCartService } from './services/shopping-cart.service';
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
