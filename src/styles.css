@@ -1,6 +1,192 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
 
-.jumbotron {
-    height: 100vh;
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.col-sm-12 {
+    padding-right: 0;
+}
+
+.home {
+    margin-top: 60px;
+    padding-left: 40px;
+}
+
+.box {
+    border: 1px solid #E5E5E5;
+    background: #f5f5f5;
+    margin: 5px 0;
+}
+
+.box img {
+    margin: 0 auto;
+    max-width: 100%;
+    padding-top: 10px;
+    background-color: #fff;
+}
+
+.box .caption {
+    border-top: 1px solid #E5E5E5;
+    padding: 20px 15px;
+}
+
+.box .caption h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e54c2a;
+    margin: 0 0 10px;
+    text-align: center;
+}
+
+.box .caption span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #757575;
+    height: 85px;
+    text-align: center;
+}
+
+.box .caption p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #6c757d;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    margin: 0;
+    line-height: 20px;
+}
+
+.divider {
+    position: relative;
+}
+
+.divider.style-1 {
+    width: 90px;
+}
+
+.divider.style-1.center {
+    margin: 10px auto 15px auto;
+    padding-bottom: 1px;
+}
+
+.divider .hr-simple.left {
+    left: 0;
+}
+
+.divider .hr-simple.right {
+    right: 0;
+}
+
+.divider .hr-simple {
+    position: absolute;
+    height: 1px;
+    width: 30px;
+    background-color: #e54c2a;
+}
+
+.divider.center .hr-icon {
+    right: 0;
+    top: -2px;
+}
+
+.divider .hr-icon {
+    position: absolute;
+    font-size: 6px;
+    top: -3px;
+    left: 0;
+    color: #e54c2a;
+}
+
+.menu {
+    margin-top: 20px;
+    margin-right: 0px;
+}
+
+.menu .minus-plus i {
+    font-size: 28px;
+}
+
+.menu .minus-plus .fa-minus-circle {
+    top: 3px;
+    position: relative;
+}
+
+.menu h5 {
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.shopping-cart {
+    background-color: #e9ecef;
+    position: fixed;
+    right: 0;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.shopping-cart .product:first-child {
+    margin-top: 20px;
+}
+
+.shopping-cart .product {
+    margin-right: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.shopping-cart i {
+    font-size: 18px;
+}
+
+.shopping-cart button {
+    margin-right: 40px;
+    margin-left: 15px;
+}
+
+.shopping-cart .btn-back {
+    margin-right: 15px;
+}
+
+.shopping-cart button:last-child {
+    margin-top: 10px;
+}
+
+.shopping-cart .total {
+    margin-right: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.shopping-cart .no-cart {
+    margin-top: 20px;
+}
+
+.shopping-cart ul li {
+    margin-top: 5px;
+}
+
+.danger {
+    color: #dd4b39 !important;
+    display: inline;
+}
+
+.success {
+    color: #00a65a !important;
+}
+
+.image-top {
+    margin-left: -30px;
 }

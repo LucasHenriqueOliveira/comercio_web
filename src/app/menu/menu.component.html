@@ -1,0 +1,115 @@
+<div class="row">
+	<div class="col-9">
+		<div class="image-top">
+			<img src="assets/images/top.jpeg" />
+		</div>
+		<div class="row menu" *ngFor="let menu of cardapio">
+			<div class="col-sm-12 commontop text-center">
+				<h4>{{menu.nome}}</h4>
+				<div class="divider style-1 center">
+					<span class="hr-simple left"></span>
+					<i class="fa fa-circle hr-icon"></i>
+					<span class="hr-simple right"></span>
+				</div>
+			</div>
+			<div class="col-sm-4" *ngFor="let opcao of menu.opcoes">
+				<div class="box">
+					<a href="#">
+						<img src="{{opcao.foto}}" alt="image" title="image" class="img-responsive">
+					</a>
+					<div class="caption">
+						<h4>{{opcao.nome}}</h4>
+						<span>{{opcao.descricao}}</span>
+						<p>{{opcao.preco | currency: 'BRL': true}}</p>
+						<button class="btn btn-secondary btn-block" *ngIf="!hasItem(opcao)" (click)="addItem(opcao)">
+							<i class="fa fa-shopping-basket"></i> Adicionar
+						</button>
+						<div class="text-center minus-plus" *ngIf="hasItem(opcao)">
+							<a (click)="minusItem(opcao)" class="btn btn-sm danger">
+								<i class="fa fa-minus-circle"></i>
+							</a>
+							<h5>{{quantity(opcao)}}</h5>
+							<a (click)="addItem(opcao)" class="btn btn-sm success">
+								<i class="fa fa-plus-circle"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-3 shopping-cart">
+		<h5 class="text-center">O que estou pedindo?</h5>
+		<div class="no-cart" *ngIf="!items().length">
+			<p class="text-center">
+				Seu carrinho está vazio!
+			</p>
+			<br />
+			<p class="text-center">
+				Siga as instruções abaixo para fazer o seu pedido:
+			</p>
+			<ul>
+				<li>Clique em Adicionar</li>
+				<li>Selecione a quantidade</li>
+				<li>Clique em Enviar Pedido</li>
+				<li>Aguarde que levaremos até a sua mesa!</li>
+			</ul>
+			<div class="row">
+				<button class="btn btn-info btn-block btn-back" [routerLink]="['/home']">
+					Voltar
+				</button>
+			</div>
+		</div>
+		<div class="row" *ngIf="items().length">
+			<div class="col-sm-12">
+				<div class="box-body">
+					<div class="row product" *ngFor="let item of items()">
+						<div class="col-sm-9">
+							{{item.menuItem.nome}}
+						</div>
+						<div class="col-sm-3 text-right">
+							<a (click)="removeItem(item)" class="btn btn-sm danger">
+								<i class="fa fa-trash"></i>
+							</a>
+						</div>
+						<div class="col-sm-7">
+							<a (click)="decreaseQty(item)" class="btn btn-sm danger">
+								<i class="fa fa-minus-circle"></i>
+							</a>
+							{{item.quantidade}}
+							<a (click)="increaseQty(item)" class="btn btn-sm success">
+								<i class="fa fa-plus-circle"></i>
+							</a>
+						</div>
+						<div class="col-sm-5 text-right">
+							{{item.value() | currency: 'BRL': true}}
+						</div>
+					</div>
+					<div class="row total">
+						<div class="col-sm-6">
+							Total:
+						</div>
+						<div class="col-sm-6 text-right">
+							{{total() | currency: 'BRL': true}}
+						</div>
+					</div>
+					<div class="row">
+						<button class="btn btn-success btn-block" (click)="sendOrder()">
+							Enviar Pedido
+						</button>
+					</div>
+					<div class="row">
+						<button class="btn btn-danger btn-block" (click)="clear()">
+							Limpar
+						</button>
+					</div>
+					<div class="row">
+						<button class="btn btn-info btn-block" [routerLink]="['/home']">
+							Voltar
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
