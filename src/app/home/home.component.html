@@ -4,8 +4,42 @@
 <div class="home">
 	<h1>Bem vindo a Koffiehuis!</h1>
 
-	<button class="btn btn-primary btn-lg" [routerLink]="['/menu']">Fazer Pedido</button>
-	<button class="btn btn-primary btn-lg" [routerLink]="['/menu']">Conheça a história!</button>
-	<button class="btn btn-primary btn-lg" [routerLink]="['/menu']">Ganhe um brinde!</button>
-	<button class="btn btn-primary btn-lg" [routerLink]="['/menu']">Chamar o garçom</button>
+	<div class="row options">
+		<div class="col-4 offset-md-2">
+			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+				<i class="fa fa-search"></i>
+				<span>Fazer o pedido</span>
+			</button>
+		</div>
+		<div class="col-4">
+			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+				<i class="fa fa-bullhorn"></i>
+				<span>Chamar o garçom</span>
+			</button>
+		</div>
+	</div>
+
+	<div class="row options">
+		<div class="col-4 offset-md-2">
+			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+				<i class="fa fa-gift"></i>
+				<span>Ganhe um brinde</span>
+			</button>
+		</div>
+		<div class="col-4">
+			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+				<i class="fa fa-coffee"></i>
+				<span>Conheça a história</span>
+			</button>
+		</div>
+	</div>
+
+	<div class="row options">
+		<div class="col-8 offset-md-2">
+			<button class="btn btn-secondary btn-lg btn-block" [routerLink]="['/menu']">
+				<i class="fa fa-credit-card"></i>
+				<span>Fechar a conta</span>
+			</button>
+		</div>
+	</div>
 </div>
