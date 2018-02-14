@@ -10,6 +10,8 @@ import { AuthGuard } from './services/auth-guard.service';
 import { MenuComponent } from './menu/menu.component';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { HistoryComponent } from './history/history.component';
+import { GiftComponent } from './gift/gift.component';
+import { ArchwizardModule } from 'ng2-archwizard';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HistoryComponent } from './history/history.component';
     LoginComponent,
     HomeComponent,
     MenuComponent,
-    HistoryComponent
+    HistoryComponent,
+    GiftComponent
   ],
   imports: [
     BrowserModule,
     routing,
     FormsModule,
+    ArchwizardModule,
   ],
   providers: [
     AuthGuard,

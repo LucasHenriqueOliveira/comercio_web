@@ -1,0 +1,104 @@
+<div class="image-top">
+	<img src="assets/images/top.jpeg" width="100%" />
+</div>
+<div class="gift">
+	<button class="btn btn-secondary" [routerLink]="['/home']">
+		<i class="fa fa-chevron-left"></i>
+		<span>Voltar</span>
+	</button>
+	<h1>Responda as seguintes perguntas:</h1>
+
+	<wizard #wizard>
+		<wizard-step>
+			Pergunta número 1
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+				<label class="form-check-label" for="exampleRadios1">
+				  First option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+				<label class="form-check-label" for="exampleRadios2">
+				  Second option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+				<label class="form-check-label" for="exampleRadios3">
+				  Third option
+				</label>
+			</div>
+			<button type="button" class="btn btn-secondary" (click)="nextQuestion(1)">Próxima</button>
+		</wizard-step>
+		<wizard-step>
+			Pergunta número 2
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+				<label class="form-check-label" for="exampleRadios1">
+				  First option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+				<label class="form-check-label" for="exampleRadios2">
+				  Second option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+				<label class="form-check-label" for="exampleRadios3">
+				  Third option
+				</label>
+			</div>
+			<button type="button" class="btn btn-secondary" previousStep>Anterior</button>
+			<button type="button" class="btn btn-secondary" (click)="nextQuestion(2)">Próxima</button>
+		</wizard-step>
+		<wizard-step>
+			Pergunta número 3
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+				<label class="form-check-label" for="exampleRadios1">
+				  First option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+				<label class="form-check-label" for="exampleRadios2">
+				  Second option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+				<label class="form-check-label" for="exampleRadios3">
+				  Third option
+				</label>
+			</div>
+			<button type="button" class="btn btn-secondary" previousStep>Anterior</button>
+			<button type="button" class="btn btn-secondary" (click)="nextQuestion(3)">Próxima</button>
+		</wizard-step>
+		<wizard-step>
+			Pergunta número 4
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+				<label class="form-check-label" for="exampleRadios1">
+				  First option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+				<label class="form-check-label" for="exampleRadios2">
+				  Second option
+				</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+				<label class="form-check-label" for="exampleRadios3">
+				  Third option
+				</label>
+			</div>
+			<button type="button" class="btn btn-secondary" previousStep>Anterior</button>
+			<button type="button" class="btn btn-secondary">Finalizar</button>
+		</wizard-step>
+	</wizard>
+</div>
