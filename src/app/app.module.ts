@@ -12,6 +12,8 @@ import { ShoppingCartService } from './services/shopping-cart.service';
 import { HistoryComponent } from './history/history.component';
 import { GiftComponent } from './gift/gift.component';
 import { ArchwizardModule } from 'ng2-archwizard';
+import { AdminComponent } from './admin/admin.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ArchwizardModule } from 'ng2-archwizard';
     HomeComponent,
     MenuComponent,
     HistoryComponent,
-    GiftComponent
+    GiftComponent,
+    AdminComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,
