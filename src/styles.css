@@ -325,3 +325,49 @@
     max-width: 400px; 
     margin: 60px auto 0;
 }
+
+.navbar {
+    margin-left: -15px;
+    background-color: #e9ecef;
+}
+
+.table td {
+    border-top: 1px solid rgba(52,58,64,.5);
+}
+
+.table th {
+    border-top: none;
+}
+
+.products {
+    padding-left: 0;
+    font-size: 18px;
+}
+
+.product ul {
+    padding-left: 0;
+}
+
+.product li {
+    list-style: none;
+}
+
+.btn-warning {
+    color: #fff;
+}
+
+.red {
+    background-color: rgba(220,53,69,.25);
+}
+
+.yellow {
+    background-color: rgba(255,193,7,.25);
+}
+
+.blue {
+    background-color: rgba(0,123,255,.25);
+}
+
+.green {
+    background-color: rgba(40,167,69,.25);
+}

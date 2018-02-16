@@ -1,3 +1,73 @@
-<p>
-  panel works!
-</p>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Logo</a>
+		</div>
+		<div class="nav navbar-nav total">
+			Quantidade: {{orders.length}} registro(s)
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="button_logout">
+				<button class="btn btn-default" ng-click="logout()"><i class="fa fa-sign-out"></i>&nbsp; Sair</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+<section>
+    <section class="wrapper">
+        <div class="row">
+            <div class="col-sm-12 products">
+                <section class="panel">
+                    <div class="panel-body">
+                        <table class="table" width="100%">
+                            <thead>
+                            <tr>
+                                <th>Pedido #</th>
+                                <th>Produtos</th>
+                                <th class="text-center">Mesa</th>
+                                <th class="text-center">Ações</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+								<tr *ngFor="let order of orders"
+									[ngClass]="{'red': order.status == 1, 'yellow': order.status == 2, 'blue': order.status == 3, 'green': order.status == 4}">
+									<td>
+										{{order.id}}
+									</td>
+									<td class="product">
+										<ul>
+											<li *ngFor="let product of order.products">
+												<span>{{product.name}}: {{product.quantity}} unid.(s)<br /></span>
+											</li>
+										</ul>
+									</td>
+									<td class="text-center">
+										{{order.table}}
+									</td>
+									<td class="text-center">
+										<button *ngIf="order.status == 1" class="btn btn-danger" ng-click="vm.prepare(order)">
+											Preparar
+										</button>
+
+										<button *ngIf="order.status == 2" class="btn btn-warning" ng-click="vm.prepare(order)">
+											Em andamento
+										</button>
+
+										<button *ngIf="order.status == 3" class="btn btn-primary" ng-click="vm.prepare(order)">
+											Pronto
+										</button>
+
+										<button *ngIf="order.status == 4" class="btn btn-success" ng-click="vm.prepare(order)">
+											Entregar
+										</button>
+									</td>
+								</tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</section>
