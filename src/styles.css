@@ -360,6 +360,10 @@
     background-color: rgba(220,53,69,.25);
 }
 
+.label-red {
+    color: rgba(220,53,69,1);
+}
+
 .yellow {
     background-color: rgba(255,193,7,.25);
 }
@@ -368,6 +372,133 @@
     background-color: rgba(0,123,255,.25);
 }
 
+.label-blue {
+    color: rgba(0,123,255,1);
+}
+
 .green {
     background-color: rgba(40,167,69,.25);
+}
+
+.label-green {
+    color: rgba(40,167,69,1);
+}
+
+.purple {
+    background-color: rgba(162,155,254,.25);
+}
+
+.grey {
+    background-color: rgba(178,190,195,.25);
+}
+
+.list-tables {
+    border-bottom: 2px solid #c3c3c3;
+    position: fixed;
+    top: 55px;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.tables {
+    border: 1px solid #e9ecef;
+}
+
+.tables>div {
+    height: 100px;
+}
+
+.tables i {
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.tables span {
+    font-size: 23px;
+    line-height: 50px;
+}
+
+.details {
+    padding: 20px;
+    padding-right: 30px;
+}
+
+.last-orders {
+    border-right: 1px solid #c3c3c3;
+    padding: 20px;
+}
+
+.last-orders h4 {
+    margin-bottom: 20px;
+}
+
+.last-orders > div {
+    margin-right: -20px;
+    margin-left: -20px;
+}
+
+.last-orders > div > div {
+    height: 68px;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(0,0,0,.075);
+}
+
+.last-orders > div > div > span {
+    position: relative;
+    top: 20px;
+}
+
+.last-orders > div > div > span > i {
+    position: relative;
+    top: 25px;
+}
+
+.last-orders i {
+    margin-right: 10px;
+}
+
+.discount {
+    display: inline-block;
+    width: 150px;
+    position: relative;
+    top: 2px;
+}
+
+.table-panel {
+    position: relative;
+    top: 60px;
+}
+
+.table-details {
+    width: 98%;
+}
+
+.label-discount {
+    font-weight: bold;
+}
+
+.label-total {
+    font-weight: bold;
+}
+
+.label-gift {
+    margin-bottom: 20px;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 15px;
+    width: 100%;
+    z-index: 2;
+}
+
+.last-orders, .details {
+    position: relative;
+    top: 360px;
+    z-index: 1;
+}
+
+.wrapper {
+    height: 100vh;
 }

@@ -20,7 +20,7 @@
             <div class="col-sm-12 products">
                 <section class="panel">
                     <div class="panel-body">
-                        <table class="table" width="100%">
+                        <table class="table table-panel" width="100%">
                             <thead>
                             <tr>
                                 <th>Pedido #</th>
@@ -31,7 +31,7 @@
                             </thead>
                             <tbody>
 								<tr *ngFor="let order of orders"
-									[ngClass]="{'red': order.status == 1, 'yellow': order.status == 2, 'blue': order.status == 3, 'green': order.status == 4}">
+									[ngClass]="{'red': order.status == 2, 'yellow': order.status == 3, 'blue': order.status == 4, 'green': order.status == 5}">
 									<td>
 										{{order.id}}
 									</td>
@@ -46,20 +46,16 @@
 										{{order.table}}
 									</td>
 									<td class="text-center">
-										<button *ngIf="order.status == 1" class="btn btn-danger" ng-click="vm.prepare(order)">
+										<button *ngIf="order.status == 2" class="btn btn-danger" ng-click="vm.prepare(order)">
 											Preparar
 										</button>
 
-										<button *ngIf="order.status == 2" class="btn btn-warning" ng-click="vm.prepare(order)">
+										<button *ngIf="order.status == 3" class="btn btn-warning" ng-click="vm.prepare(order)">
 											Em andamento
 										</button>
 
-										<button *ngIf="order.status == 3" class="btn btn-primary" ng-click="vm.prepare(order)">
+										<button *ngIf="order.status == 4" class="btn btn-primary" ng-click="vm.prepare(order)">
 											Pronto
-										</button>
-
-										<button *ngIf="order.status == 4" class="btn btn-success" ng-click="vm.prepare(order)">
-											Entregar
 										</button>
 									</td>
 								</tr>
