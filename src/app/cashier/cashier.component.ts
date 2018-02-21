@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-admin',
-    templateUrl: './admin.component.html',
-    styleUrls: ['./admin.component.css']
+    selector: 'app-cashier',
+    templateUrl: './cashier.component.html',
+    styleUrls: ['./cashier.component.css']
 })
-export class AdminComponent implements OnInit {
+export class CashierComponent implements OnInit {
 
     tables = [];
     orders = [];
@@ -23,8 +23,8 @@ export class AdminComponent implements OnInit {
             id: 2,
             name: 'MESA 2',
             status: 2,
-            gift: false,
-            waiter: false
+            gift: true,
+            waiter: true
         }, {
             id: 3,
             name: 'MESA 3',

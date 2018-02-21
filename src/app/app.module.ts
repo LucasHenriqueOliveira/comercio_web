@@ -12,7 +12,7 @@ import { ShoppingCartService } from './services/shopping-cart.service';
 import { HistoryComponent } from './history/history.component';
 import { GiftComponent } from './gift/gift.component';
 import { ArchwizardModule } from 'ng2-archwizard';
-import { AdminComponent } from './admin/admin.component';
+import { CashierComponent } from './cashier/cashier.component';
 import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { PanelComponent } from './panel/panel.component';
     MenuComponent,
     HistoryComponent,
     GiftComponent,
-    AdminComponent,
+    CashierComponent,
     PanelComponent
   ],
   imports: [
