@@ -7,6 +7,7 @@ import { HistoryComponent } from './history/history.component';
 import { GiftComponent } from './gift/gift.component';
 import { CashierComponent } from './cashier/cashier.component';
 import { PanelComponent } from './panel/panel.component';
+import { AdminComponent } from './admin/admin.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: 'gift', component: GiftComponent },
     { path: 'cashier', component: CashierComponent },
     { path: 'panel', component: PanelComponent },
+    { path: 'admin', component: AdminComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
