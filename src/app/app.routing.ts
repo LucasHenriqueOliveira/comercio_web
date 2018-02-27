@@ -8,6 +8,8 @@ import { GiftComponent } from './gift/gift.component';
 import { CashierComponent } from './cashier/cashier.component';
 import { PanelComponent } from './panel/panel.component';
 import { AdminComponent } from './admin/admin.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product/product.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
@@ -18,6 +20,8 @@ const appRoutes: Routes = [
     { path: 'cashier', component: CashierComponent },
     { path: 'panel', component: PanelComponent },
     { path: 'admin', component: AdminComponent },
+    { path: 'products', component: ProductsComponent },
+    { path: 'product', component: ProductComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

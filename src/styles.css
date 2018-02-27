@@ -339,7 +339,7 @@
     border-top: none;
 }
 
-.products {
+.panel-products {
     padding-left: 0;
     font-size: 18px;
 }
@@ -501,4 +501,14 @@
 
 .wrapper {
     height: 100vh;
+}
+
+.product {
+    margin-top: 90px;
+    margin-left: 20px;
+}
+
+.products {
+    margin-top: 80px;
+    margin-left: 30px;
 }

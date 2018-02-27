@@ -15,6 +15,8 @@ import { ArchwizardModule } from 'ng2-archwizard';
 import { CashierComponent } from './cashier/cashier.component';
 import { PanelComponent } from './panel/panel.component';
 import { AdminComponent } from './admin/admin.component';
+import { ProductsComponent } from './products/products.component';
+import { ProductComponent } from './products/product/product.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AdminComponent } from './admin/admin.component';
     GiftComponent,
     CashierComponent,
     PanelComponent,
-    AdminComponent
+    AdminComponent,
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
