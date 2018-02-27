@@ -1,0 +1,76 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Logo</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="button_logout">
+				<button class="btn btn-secondary" ng-click="logout()">
+					<i class="fa fa-sign-out"></i>&nbsp; Sair</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+<section class="wrapper">
+	<div class="row">
+		<div class="col-sm-11 product">
+			<form>
+				<div class="form-group row">
+					<label for="inputCategoria" class="col-sm-2 col-form-label">Categoria</label>
+					<div class="col-sm-10">
+						<select id="inputCategoria" class="form-control">
+							<option selected>Selecione a categoria</option>
+							<option>Salada</option>
+							<option>Salgados</option>
+							<option>Drinks</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputNome" placeholder="Nome">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputPrecoCusto" class="col-sm-2 col-form-label">Preço Custo</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputPrecoCusto" placeholder="Preço Custo">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputPrecoVenda" class="col-sm-2 col-form-label">Preço Venda</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputPrecoVenda" placeholder="Preço Venda">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputEstoque" class="col-sm-2 col-form-label">Estoque</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="inputEstoque" placeholder="Estoque">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
+					<div class="col-sm-10">
+						<textarea class="form-control" id="inputDescricao" rows="3"></textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputFoto" class="col-sm-2 col-form-label">Foto</label>
+					<div class="col-sm-10">
+						<input type="file" class="form-control-file" id="inputFoto">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-11 text-center">
+						<button type="button" [routerLink]="['/products']" class="btn btn-secondary btn-lg">Voltar</button>
+						<button type="submit" class="btn btn-primary btn-lg">Salvar</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
