@@ -41,13 +41,13 @@
 						<td class="text-center">{{product.price_sale | currency: 'BRL': true}}</td>
 						<td class="text-center">{{product.stock}}</td>
 						<td class="text-center">
-							<button type="button" *ngIf="product.active" class="btn btn-warning">
+							<button type="button" *ngIf="product.active" (click)="edit(product)" class="btn btn-warning">
 								<i class="fa fa-edit"></i>
 							</button>
-							<button type="button" *ngIf="product.active" class="btn btn-danger">
+							<button type="button" *ngIf="product.active" (click)="remove(product)" class="btn btn-danger">
 								<i class="fa fa-trash"></i>
 							</button>
-							<button type="button" *ngIf="!product.active" class="btn btn-dark">
+							<button type="button" *ngIf="!product.active" (click)="reactive(product)" class="btn btn-dark">
 								<i class="fa fa-check"></i>
 							</button>
 						</td>
@@ -57,3 +57,39 @@
 		</div>
 	</div>
 </section>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+ id="remove">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- dialog body -->
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4>Deseja remover o produto?</h4>
+			</div>
+			<!-- dialog buttons -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Não</button>
+            	<button type="button" class="btn btn-success btn-lg" (click)="confirmRemove()">Sim</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+ id="reactive">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- dialog body -->
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4>Deseja ativar o produto?</h4>
+			</div>
+			<!-- dialog buttons -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Não</button>
+            	<button type="button" class="btn btn-success btn-lg" (click)="confirmReactive()">Sim</button>
+			</div>
+		</div>
+	</div>
+</div>

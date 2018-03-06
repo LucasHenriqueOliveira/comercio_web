@@ -17,6 +17,7 @@ import { PanelComponent } from './panel/panel.component';
 import { AdminComponent } from './admin/admin.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductComponent } from './products/product/product.component';
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ProductComponent } from './products/product/product.component';
   providers: [
     AuthGuard,
     ShoppingCartService,
+    ProductService,
     {provide: LOCALE_ID, useValue: 'pt-BR'}
   ],
   bootstrap: [AppComponent]

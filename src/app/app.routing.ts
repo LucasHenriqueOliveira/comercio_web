@@ -22,6 +22,7 @@ const appRoutes: Routes = [
     { path: 'admin', component: AdminComponent },
     { path: 'products', component: ProductsComponent },
     { path: 'product', component: ProductComponent },
+    { path: 'product/:id', component: ProductComponent },
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
