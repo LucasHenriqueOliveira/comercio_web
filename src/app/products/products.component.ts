@@ -16,7 +16,10 @@ export class ProductsComponent implements OnInit {
     constructor(private router: Router, public ProductService: ProductService) { }
 
     ngOnInit() {
-        this.products = [{
+
+        this.ProductService.getProducts().subscribe(products => this.products = products);
+
+        /* this.products = [{
             id: 1,
             name: 'Dish Name Here',
             price_cost: 15,
@@ -61,7 +64,7 @@ export class ProductsComponent implements OnInit {
             active: false,
             category: 1,
             description: 'test test test test'
-        }];
+        }]; */
     }
 
     edit(product) {
