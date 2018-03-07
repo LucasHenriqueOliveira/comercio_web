@@ -8,22 +8,13 @@ import { API } from '../app.api';
 import { ErrorHandler } from '../app.error-handler';
 
 @Injectable()
-export class ProductService {
+export class CategoryService {
 
     constructor(private http: Http) { }
 
-    setProduct(product) {
-        localStorage.setItem('product', JSON.stringify(product));
-    }
-
-    getProduct() {
-        return JSON.parse(localStorage.getItem('product'));
-    }
-
-    getProducts(): Observable<any> {
-        return this.http.get(`${API}/product`)
+    getCategories(): Observable<any> {
+        return this.http.get(`${API}/category`)
           .map(response => response.json())
           .catch(ErrorHandler.handleError);
     }
-
 }

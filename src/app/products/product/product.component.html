@@ -16,52 +16,50 @@
 <section class="wrapper">
 	<div class="row">
 		<div class="col-sm-11 product">
-			<form>
+			<form [formGroup]="productForm" novalidate>
 				<div class="form-group row">
 					<label for="inputCategoria" class="col-sm-2 col-form-label">Categoria</label>
 					<div class="col-sm-10">
-						<select id="inputCategoria" class="form-control">
-							<option selected>Selecione a categoria</option>
-							<option>Salada</option>
-							<option>Salgados</option>
-							<option>Drinks</option>
+						<select id="inputCategoria" formControlName="category" class="form-control" *ngIf="categories.length">
+							<option *ngIf="!id" [value]="0">Selecione uma categoria</option>
+							<option *ngFor="let option of categories" [value]="option.id">{{option.name}}</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputNome" class="col-sm-2 col-form-label">Nome</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputNome" placeholder="Nome">
+						<input type="text" class="form-control" formControlName="name" id="inputNome" placeholder="Nome">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputPrecoCusto" class="col-sm-2 col-form-label">Preço Custo</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputPrecoCusto" placeholder="Preço Custo">
+						<input type="text" currencyMask class="form-control" formControlName="price_cost" id="inputPrecoCusto" placeholder="Preço Custo">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputPrecoVenda" class="col-sm-2 col-form-label">Preço Venda</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputPrecoVenda" placeholder="Preço Venda">
+						<input type="text" currencyMask class="form-control" formControlName="price_sale" id="inputPrecoVenda" placeholder="Preço Venda">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputEstoque" class="col-sm-2 col-form-label">Estoque</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="inputEstoque" placeholder="Estoque">
+						<input type="text" class="form-control" formControlName="stock" id="inputEstoque" placeholder="Estoque">
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
 					<div class="col-sm-10">
-						<textarea class="form-control" id="inputDescricao" rows="3"></textarea>
+						<textarea class="form-control" id="inputDescricao" formControlName="description" rows="3"></textarea>
 					</div>
 				</div>
 				<div class="form-group row">
 					<label for="inputFoto" class="col-sm-2 col-form-label">Foto</label>
 					<div class="col-sm-10">
-						<input type="file" class="form-control-file" id="inputFoto">
+						<input type="file" class="form-control-file" formControlName="image" id="inputFoto">
 					</div>
 				</div>
 				<div class="form-group row">
