@@ -1,0 +1,89 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Logo</a>
+		</div>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="button_logout">
+				<button class="btn btn-secondary" ng-click="logout()">
+					<i class="fa fa-sign-out"></i>&nbsp; Sair</button>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+
+<section class="wrapper">
+	<div class="row">
+		<div class="col-sm-11 products">
+			<div class="row">
+				<h3 class="col-sm-6">Categorias</h3>
+				<div class="col-sm-6 text-right">
+					<button type="button" [routerLink]="['/category']" class="btn btn-secondary">Categoria Nova</button>
+				</div>
+			</div>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Categoria</th>
+						<th class="text-center">Ações</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let category of categories">
+						<td>{{category.id}}</td>
+						<td>{{category.name}}</td>
+						<td class="text-center">
+							<button type="button" *ngIf="category.active" (click)="edit(category)" class="btn btn-warning">
+								<i class="fa fa-edit"></i>
+							</button>
+							<button type="button" *ngIf="category.active" (click)="remove(category)" class="btn btn-danger">
+								<i class="fa fa-trash"></i>
+							</button>
+							<button type="button" *ngIf="!category.active" (click)="active(category)" class="btn btn-dark">
+								<i class="fa fa-check"></i>
+							</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+ id="remove">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- dialog body -->
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4>Deseja remover a categoria?</h4>
+			</div>
+			<!-- dialog buttons -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Não</button>
+            	<button type="button" class="btn btn-success btn-lg" (click)="confirmRemove()">Sim</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+ id="active">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- dialog body -->
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4>Deseja ativar a categoria?</h4>
+			</div>
+			<!-- dialog buttons -->
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Não</button>
+            	<button type="button" class="btn btn-success btn-lg" (click)="confirmActive()">Sim</button>
+			</div>
+		</div>
+	</div>
+</div>

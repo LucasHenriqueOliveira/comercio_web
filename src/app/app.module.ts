@@ -21,6 +21,8 @@ import { ProductService } from './services/product.service';
 import { CategoryService } from './services/category.service';
 import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoryComponent } from './categories/category/category.component';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     align: 'left',
@@ -46,7 +48,9 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     PanelComponent,
     AdminComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    CategoriesComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
