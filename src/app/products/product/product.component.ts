@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from './product.model';
 
 @Component({
     selector: 'app-product',
@@ -19,7 +20,7 @@ export class ProductComponent implements OnInit {
     numberPattern = /^[0-9]*$/;
 
     constructor(public CategoryService: CategoryService, public ProductService: ProductService,
-        private formBuilder: FormBuilder, private route: ActivatedRoute) {
+        private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) {
 
             this.route.params.subscribe(params => {
                 if (params) {
@@ -53,5 +54,23 @@ export class ProductComponent implements OnInit {
                 image: this.formBuilder.control('')
             });
         }
+    }
+
+    save() {
+        if (this.id) {
+            this.edit();
+        } else {
+            this.add();
+        }
+    }
+
+    edit() {
+
+    }
+
+    add() {
+        this.ProductService.addProduct(this.productForm.value).subscribe(product => {
+            this.router.navigate(['products']);
+        });
     }
 }
