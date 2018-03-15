@@ -47,7 +47,7 @@
 							<button type="button" *ngIf="product.active" (click)="remove(product)" class="btn btn-danger">
 								<i class="fa fa-trash"></i>
 							</button>
-							<button type="button" *ngIf="!product.active" (click)="reactive(product)" class="btn btn-dark">
+							<button type="button" *ngIf="!product.active" (click)="active(product)" class="btn btn-dark">
 								<i class="fa fa-check"></i>
 							</button>
 						</td>
@@ -77,7 +77,7 @@
 </div>
 
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
- id="reactive">
+ id="active">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<!-- dialog body -->
@@ -88,7 +88,7 @@
 			<!-- dialog buttons -->
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger btn-lg" data-dismiss="modal">Não</button>
-            	<button type="button" class="btn btn-success btn-lg" (click)="confirmReactive()">Sim</button>
+            	<button type="button" class="btn btn-success btn-lg" (click)="confirmActive()">Sim</button>
 			</div>
 		</div>
 	</div>

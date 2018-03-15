@@ -16,55 +16,7 @@ export class ProductsComponent implements OnInit {
     constructor(private router: Router, public ProductService: ProductService) { }
 
     ngOnInit() {
-
         this.ProductService.getProducts().subscribe(products => this.products = products);
-
-        /* this.products = [{
-            id: 1,
-            name: 'Dish Name Here',
-            price_cost: 15,
-            price_sale: 30,
-            stock: 10,
-            active: true,
-            category: 1,
-            description: 'test test test test'
-        }, {
-            id: 2,
-            name: 'Dish Name Here',
-            price_cost: 15,
-            price_sale: 30,
-            stock: 10,
-            active: true,
-            category: 1,
-            description: 'test test test test'
-        }, {
-            id: 3,
-            name: 'Dish Name Here',
-            price_cost: 15,
-            price_sale: 30,
-            stock: 10,
-            active: true,
-            category: 1,
-            description: 'test test test test'
-        }, {
-            id: 4,
-            name: 'Dish Name Here',
-            price_cost: 15,
-            price_sale: 30,
-            stock: 10,
-            active: true,
-            category: 1,
-            description: 'test test test test'
-        }, {
-            id: 5,
-            name: 'Dish Name Here',
-            price_cost: 15,
-            price_sale: 30,
-            stock: 10,
-            active: false,
-            category: 1,
-            description: 'test test test test'
-        }]; */
     }
 
     edit(product) {
@@ -78,15 +30,23 @@ export class ProductsComponent implements OnInit {
     }
 
     confirmRemove() {
-        $('#remove').modal('hide');
+        this.ProductService.remove(this.id).subscribe(products => {
+            // add notification - remove product
+            this.products = products;
+            $('#remove').modal('hide');
+        });
     }
 
-    reactive(product) {
-        $('#reactive').modal('show');
+    active(product) {
+        $('#active').modal('show');
         this.id = product.id;
     }
 
-    confirmReactive() {
-        $('#reactive').modal('hide');
+    confirmActive() {
+        this.ProductService.active(this.id).subscribe(products => {
+            // add notification - active product
+            this.products = products;
+            $('#active').modal('hide');
+        });
     }
 }

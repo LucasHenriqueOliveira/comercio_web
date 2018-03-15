@@ -22,18 +22,30 @@ export class ProductService {
 
     getProducts(): Observable<any> {
         return this.http.get(`${API}/product`)
-          .map(response => response.json())
-          .catch(ErrorHandler.handleError);
+            .map(response => response.json())
+            .catch(ErrorHandler.handleError);
     }
 
     addProduct(product: any): Observable<any> {
         return this.http.post(`${API}/product`, product)
-          .catch(ErrorHandler.handleError);
+            .catch(ErrorHandler.handleError);
     }
 
     editProduct(product: any): Observable<any> {
         return this.http.put(`${API}/product/${product.id}`, product)
-          .catch(ErrorHandler.handleError);
+            .catch(ErrorHandler.handleError);
+    }
+
+    active(id: any): Observable<any> {
+        return this.http.put(`${API}/product/active/${id}`, id)
+            .map(response => response.json())
+            .catch(ErrorHandler.handleError);
+    }
+
+    remove(id: any): Observable<any> {
+        return this.http.put(`${API}/product/remove/${id}`, id)
+            .map(response => response.json())
+            .catch(ErrorHandler.handleError);
     }
 
 }
