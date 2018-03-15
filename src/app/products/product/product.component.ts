@@ -65,11 +65,16 @@ export class ProductComponent implements OnInit {
     }
 
     edit() {
-
+        this.productForm.value.id = this.id;
+        this.ProductService.editProduct(this.productForm.value).subscribe(product => {
+            // add notification - add product
+            this.router.navigate(['products']);
+        });
     }
 
     add() {
         this.ProductService.addProduct(this.productForm.value).subscribe(product => {
+            // add notification - add product
             this.router.navigate(['products']);
         });
     }

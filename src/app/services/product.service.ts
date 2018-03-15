@@ -31,4 +31,9 @@ export class ProductService {
           .catch(ErrorHandler.handleError);
     }
 
+    editProduct(product: any): Observable<any> {
+        return this.http.put(`${API}/product/${product.id}`, product)
+          .catch(ErrorHandler.handleError);
+    }
+
 }
