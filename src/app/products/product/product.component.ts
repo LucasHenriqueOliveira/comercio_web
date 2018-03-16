@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from './product.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-product',
@@ -20,7 +21,8 @@ export class ProductComponent implements OnInit {
     numberPattern = /^[0-9]*$/;
 
     constructor(public CategoryService: CategoryService, public ProductService: ProductService,
-        private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) {
+        private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router,
+        private toastr: ToastrService) {
 
             this.route.params.subscribe(params => {
                 if (params) {
@@ -67,14 +69,14 @@ export class ProductComponent implements OnInit {
     edit() {
         this.productForm.value.id = this.id;
         this.ProductService.editProduct(this.productForm.value).subscribe(product => {
-            // add notification - add product
+            this.toastr.success('Produto alterado com sucesso!');
             this.router.navigate(['products']);
         });
     }
 
     add() {
         this.ProductService.addProduct(this.productForm.value).subscribe(product => {
-            // add notification - add product
+            this.toastr.success('Produto adicionado com sucesso!');
             this.router.navigate(['products']);
         });
     }

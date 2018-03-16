@@ -23,6 +23,8 @@ import { CurrencyMaskModule } from 'ng2-currency-mask';
 import { CurrencyMaskConfig, CURRENCY_MASK_CONFIG } from 'ng2-currency-mask/src/currency-mask.config';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoryComponent } from './categories/category/category.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     align: 'left',
@@ -60,13 +62,17 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     ArchwizardModule,
     HttpModule,
     CurrencyMaskModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000
+    }),
   ],
   providers: [
     AuthGuard,
     ShoppingCartService,
     ProductService,
     CategoryService,
-    {provide: LOCALE_ID, useValue: 'pt-BR'},
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: CURRENCY_MASK_CONFIG, useValue: CustomCurrencyMaskConfig }
   ],
   bootstrap: [AppComponent]

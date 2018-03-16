@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
+import { ToastrService } from 'ngx-toastr';
 declare var $: any;
+
 
 @Component({
     selector: 'app-products',
@@ -13,7 +15,7 @@ export class ProductsComponent implements OnInit {
     products = [];
     id = '';
 
-    constructor(private router: Router, public ProductService: ProductService) { }
+    constructor(private router: Router, public ProductService: ProductService, private toastr: ToastrService) { }
 
     ngOnInit() {
         this.ProductService.getProducts().subscribe(products => this.products = products);
@@ -31,7 +33,7 @@ export class ProductsComponent implements OnInit {
 
     confirmRemove() {
         this.ProductService.remove(this.id).subscribe(products => {
-            // add notification - remove product
+            this.toastr.success('Produto removido com sucesso!');
             this.products = products;
             $('#remove').modal('hide');
         });
@@ -44,7 +46,7 @@ export class ProductsComponent implements OnInit {
 
     confirmActive() {
         this.ProductService.active(this.id).subscribe(products => {
-            // add notification - active product
+            this.toastr.success('Produto ativado com sucesso!');
             this.products = products;
             $('#active').modal('hide');
         });

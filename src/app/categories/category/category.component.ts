@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-category',
@@ -16,7 +17,7 @@ export class CategoryComponent implements OnInit {
     categoryForm: FormGroup;
 
     constructor(public CategoryService: CategoryService, private formBuilder: FormBuilder,
-        private route: ActivatedRoute, private router: Router) {
+        private route: ActivatedRoute, private router: Router, private toastr: ToastrService) {
 
             this.route.params.subscribe(params => {
                 if (params) {
@@ -50,14 +51,14 @@ export class CategoryComponent implements OnInit {
     edit() {
         this.categoryForm.value.id = this.id;
         this.CategoryService.editCategory(this.categoryForm.value).subscribe(category => {
-            // add notification - add product
+            this.toastr.success('Categoria alterada com sucesso!');
             this.router.navigate(['categories']);
         });
     }
 
     add() {
         this.CategoryService.addCategory(this.categoryForm.value).subscribe(category => {
-            // add notification - add product
+            this.toastr.success('Categoria adicionada com sucesso!');
             this.router.navigate(['categories']);
         });
     }

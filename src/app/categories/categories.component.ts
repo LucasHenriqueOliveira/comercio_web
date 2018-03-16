@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoryService } from '../services/category.service';
+import { ToastrService } from 'ngx-toastr';
 declare var $: any;
 
 @Component({
@@ -13,7 +14,7 @@ export class CategoriesComponent implements OnInit {
     categories = [];
     id = '';
 
-    constructor(private router: Router, public CategoryService: CategoryService) { }
+    constructor(private router: Router, public CategoryService: CategoryService, private toastr: ToastrService) { }
 
     ngOnInit() {
         this.CategoryService.getCategories().subscribe(categories => this.categories = categories);
@@ -31,7 +32,7 @@ export class CategoriesComponent implements OnInit {
 
     confirmRemove() {
         this.CategoryService.remove(this.id).subscribe(categories => {
-            // add notification - remove product
+            this.toastr.success('Categoria removida com sucesso!');
             this.categories = categories;
             $('#remove').modal('hide');
         });
@@ -44,7 +45,7 @@ export class CategoriesComponent implements OnInit {
 
     confirmActive() {
         this.CategoryService.active(this.id).subscribe(categories => {
-            // add notification - active product
+            this.toastr.success('Categoria ativada com sucesso!');
             this.categories = categories;
             $('#active').modal('hide');
         });
